@@ -13,15 +13,17 @@
     <main>
         <section id="calc">
             <h1>Calculadora de Precificação</h1>
-            <form id="calc-form">
+            <form id="calc-form" class="input-group">
                 <label for="cost-price">Preço de Custo (R$):</label>
-                <input type="number" id="cost-price" step="0.01" required>
+                <input id="cost-price" type="text" oninput="formatarMoeda(this)">
+
 
                 <label for="tax-rate">Taxa de Imposto (%):</label>
-                <input type="number" id="tax-rate" step="0.01" required>
+                <input id="tax-rate" type="text" oninput="formatarPorcentagem(this)">
 
                 <label for="desired-margin">Margem de Lucro Desejada (%):</label>
-                <input type="number" id="desired-margin" step="0.01" required>
+                <input id="desired-margin" type="text" oninput="formatarPorcentagem(this)">
+
 
                 <button type="button" onclick="calcular()">Calcular Preço de Venda</button>
             </form>

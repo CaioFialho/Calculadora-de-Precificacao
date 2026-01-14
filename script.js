@@ -15,21 +15,25 @@ function formatarPorcentagem(input) {
 }
 
 function getValorNumerico(id) {
-  return parseFloat(document.getElementById(id).value.replace(/[^\d,]/g, '').replace(',', '.')) || 0;
+  return parseFloat(
+    document.getElementById(id)
+      .value
+      .replace(/[^\d,]/g, '')
+      .replace(',', '.')
+  ) || 0;
 }
 
 
 function calcular() {
-  const custo = getValorNumerico('cost-price');
-  const imposto = getValorNumerico('tax-rate');
-  const margem = getValorNumerico('desired-margin');
+    const custo = getValorNumerico('cost-price');
+    const impostos = getValorNumerico('tax-rate');
+    const margemLucro = getValorNumerico('desired-margin');
 
-  const precoComImposto = custo * (1 + imposto / 100);
-  const precoFinal = precoComImposto * (1 + margem / 100);
 
-  document.getElementById('selling-price').textContent =
-    new Intl.NumberFormat('pt-BR', {
-      style: 'currency',
-      currency: 'BRL'
-    }).format(precoFinal);
+    const precoComImpostos = custo + (custo * (impostos / 100));
+    const precoFinal = precoComImpostos + (precoComImpostos * (margemLucro / 100));
+
+    document.getElementById('selling-price').textContent = precoFinal.toFixed(2).replace('.', ',');
+    document.getElementById('result').classList.add('show');
+
 }
