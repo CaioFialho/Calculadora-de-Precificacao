@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Precificação com Impostos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Calculadora de Precificação com Impostos</h1>
+    </header>
+    <main>
+        <section id="calc">
+            <h1>Calculadora de Precificação</h1>
+            <form id="calc-form">
+                <label for="cost-price">Preço de Custo (R$):</label>
+                <input type="number" id="cost-price" step="0.01" required>
+
+                <label for="tax-rate">Taxa de Imposto (%):</label>
+                <input type="number" id="tax-rate" step="0.01" required>
+
+                <label for="desired-margin">Margem de Lucro Desejada (%):</label>
+                <input type="number" id="desired-margin" step="0.01" required>
+
+                <button type="button" onclick="calcular()">Calcular Preço de Venda</button>
+            </form>
+            <div id="result">
+                <h2>Preço de Venda Calculado:</h2>
+                <p>  R$ <span id="selling-price">0,00</span></p>
+            </div>
+        </section>
+        <article id="descricao">
+            <h1>Sobre esta ferramenta</h1>
+
+            <p>Esta calculadora foi criada para facilitar a definição do preço de venda de produtos, considerando custos, impostos e a margem de lucro desejada.</p>
+
+            <p>O objetivo é substituir cálculos manuais feitos em planilhas, reduzindo erros e tornando o processo mais rápido e confiável no dia a dia de pequenos negócios.</p>
+
+            <p>Além de auxiliar na tomada de decisões, este projeto também faz parte de um estudo prático de programação, focado em lógica, regras de negócio e desenvolvimento de soluções úteis para situações reais.</p>
+        </article>
+
+    </main>
+    <footer>
+        <p>&copy; 2026 Calculadora de Impostos. Todos os direitos reservados.</p>
+    </footer>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
