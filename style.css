@@ -102,7 +102,7 @@ main {
     padding: 1.5rem;
     border-radius: 4px;
     margin-top: 1.5rem;
-    display: none;
+    display: block;
 }
 
 #result.show {

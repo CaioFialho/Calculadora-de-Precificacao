@@ -3,34 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora de Precificação com Impostos</title>
+    <title>Calculadora de Margem de Contribuição</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Calculadora de Precificação com Impostos</h1>
+        <h1>Calculadora de Margem de Contribuição</h1>
     </header>
     <main>
         <section id="calc">
-            <h1>Calculadora de Precificação</h1>
+            <h1>Calculadora</h1>
             <form id="calc-form" class="input-group">
                 <label for="cost-price">Preço de Custo (R$):</label>
                 <input id="cost-price" type="text" oninput="formatarMoeda(this)">
 
+                <label for="packaging-cost">Embalagens e Outros Custos (R$):</label>
+                <input id="packaging-cost" type="text" oninput="formatarMoeda(this)">
 
-                <label for="tax-rate">Taxa de Imposto (%):</label>
-                <input id="tax-rate" type="text" oninput="formatarPorcentagem(this)">
+                <label for="shipping-cost">Frete (R$):</label>
+                <input id="shipping-cost" type="text" oninput="formatarMoeda(this)">
 
-                <label for="desired-margin">Margem de Lucro Desejada (%):</label>
-                <input id="desired-margin" type="text" oninput="formatarPorcentagem(this)">
+                <label for="selling-price-input">Preço de Venda (R$):</label>
+                <input id="selling-price-input" type="text" oninput="formatarMoeda(this)">
+
+                <label for="discount">Descontos (R$):</label>
+                <input id="discount" type="text" oninput="formatarMoeda(this)">
+
+                <label for="card-fee">Taxa do Cartão (%):</label>
+                <input id="card-fee" type="text" oninput="formatarPorcentagem(this)">
+
+                <label for="state-tax">Imposto Estadual (%):</label>
+                <input id="state-tax" type="text" oninput="formatarPorcentagem(this)">
+
+                <label for="federal-tax">Imposto Federal (%):</label>
+                <input id="federal-tax" type="text" oninput="formatarPorcentagem(this)">
 
 
-                <button type="button" onclick="calcular()">Calcular Preço de Venda</button>
+
+                <button type="button" onclick="calcular()">Calcular Margem de Contribuição</button>
             </form>
+
             <div id="result">
                 <h2>Preço de Venda Calculado:</h2>
-                <p>  R$ <span id="selling-price">0,00</span></p>
+                <p>  R$ <span id="margin">0,00</span></p>
             </div>
+            
         </section>
         <article id="descricao">
             <h1>Sobre esta ferramenta</h1>
